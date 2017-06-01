@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.intelligentler.shuitu.dao.TXLUserMapper">
+	<resultMap type="com.intelligentler.shuitu.entity.User" id="List">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="account" jdbcType="VARCHAR" property="account" />
+		<result column="password" jdbcType="VARCHAR" property="password" />
+		<result column="username" jdbcType="VARCHAR" property="username" />
+		<result column="userphoto" jdbcType="VARCHAR" property="userphoto" />
+		<result column="contact" jdbcType="VARCHAR" property="contact" />
+	</resultMap>
+	<select id="queryPasswordByAccount" parameterType="String" resultType="String">
+		select password from user where account=#{account}
+	</select>
+	<insert id="insertUser" parameterType="com.intelligentler.shuitu.entity.User" useGeneratedKeys="true" keyProperty="id" >
+		insert into user values(#{id},#{account},#{password},#{username},#{userphoto},#{contact})
+	</insert>
+	<select id="countUser" resultType="Integer">
+	 	select count(id) from user
+	</select>
+		<select id="queryIdByAccount" parameterType="String" resultType="Integer">
+		select id from user where account=#{account}
+	</select>
+</mapper>
