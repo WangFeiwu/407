@@ -52,7 +52,7 @@
 			<exclude-mapping path="/404" />
 			<exclude-mapping path="/500" />
 			<exclude-mapping path="/resources/**"/>
-			<beans:bean class="com.intelligentler.shuitu.interceptor.SignInterceptor"/>
+			<beans:bean class="cn.flydou.rubbish407.interceptor.SignInterceptor"/>
 		</interceptor>
 	</interceptors> -->
 	

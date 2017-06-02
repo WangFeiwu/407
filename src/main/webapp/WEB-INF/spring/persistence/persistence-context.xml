@@ -43,7 +43,7 @@
         			<value>classpath:cn/flydou/rubbish407/mapping/*.xml</value>
         		</list>
         	</property>
-        <property name="typeAliasesPackage" value="com.intelligentler.shuitu.entity" />
+        <property name="typeAliasesPackage" value="cn.flydou.rubbish407.entity" />
         <property name="configuration" ref="mybatisConfiguration"/>
     </bean>
     
@@ -53,7 +53,7 @@
     
     <!-- Config DAO path -->  
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="com.intelligentler.shuitu.dao" />  
+        <property name="basePackage" value="cn.flydou.rubbish407.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
     </bean>
     
