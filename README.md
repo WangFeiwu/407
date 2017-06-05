@@ -13,3 +13,7 @@
 9. 使用图表技术：ECharts
 10. 使用调度技术：Quartz
 11. 使用第三方接入：钉钉SDK
+
+## MMP
+1. fuck:tomcat7.0.78 not supports shiro 1.3.5
+2. fuck: 低于 tomcat 7.0.78 不支持mybatis 3.4.0 艹，搞半天
