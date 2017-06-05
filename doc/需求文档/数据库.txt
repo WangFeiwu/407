@@ -1,0 +1,133 @@
+﻿CREATE DATABASE OA DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+//用户
+CREATE TABLE user(
+	id int not null auto_increment,
+	account varchar(16) not null unique,
+	password varchar(16) not null,
+	usertype tinyint not null,
+	primary key(id)
+);
+
+//个人信息
+CREATE TABLE userInfo(
+	id int not null auto_increment,
+    userId int not null,
+	name varchar(16) not null unique,
+    idcardNum varchar(32) not null unique,
+    sex tinyint,
+    num int,
+	age int,
+    apartment varchar(16),
+    nativePlace varchar(16),
+    registerBatch int,
+    start_time date,
+    jobState boolean,
+    telNum1 varchar(16),
+    telNum2 varchar(16),
+    qq varchar(16),
+    email varchar(32),
+    address varchar(64),
+    job varchar(32),
+    constraint FK_t foreign key(userId) references user(id),
+	primary key(id)
+);
+
+//课程
+CREATE TABLE course(
+	id int not null auto_increment,
+	courseName varchar(16) not null unique,
+    courseRoom varchar(16) not null,
+    courseTime datetime not null,
+    courseType varchar(16) not null,
+	primary key(id)
+);
+
+//教师和课程映射
+CREATE TABLE teacherWithCourse(
+	id int not null auto_increment,
+	teacherId int not null,
+	courseId int not null,
+	constraint FK_a foreign key(teacherId) references user(id),
+	constraint FK_b foreign key(courseId) references course(id),
+	primary key(id)
+);
+
+//报销单
+CREATE TABLE receipt(
+	id int not null auto_increment,
+    receipterId int not null,
+    receipterName varchar(16) not null,
+	content text,
+    receiptType varchar(32) not null,
+    receiptfor  varchar(32),
+	isProcessed boolean,
+    processedTime datetime not null,
+    receipteNum int not null,
+    receipteType varchar(32) not null,
+    constraint FK_d foreign key(receipterId) references user(id),
+	primary key(id)
+);
+
+//请假单
+CREATE TABLE note(
+	id int not null auto_increment,
+	sender varchar(16),
+	isProcess boolean,
+	startTime datetime not null,
+	endTime datetime not null,
+	result boolean,
+	primary key(id)
+);
+
+//考勤
+CREATE TABLE attendance(
+	id int not null auto_increment,
+	attenderName varchar(16) not null,
+	morningStart datetime not null,
+	morningEnd datetime not null,
+	afternoonStart datetime not null,
+	afternoonEnd datetime not null,
+	constraint FK_f foreign key(attenderName) references userInfo(name),
+	primary key(id)
+);
+
+//社团
+CREATE TABLE club(
+	id int not null auto_increment,
+	name varchar(32) not null,
+	primary key(id)
+);
+
+//社团和用户映射
+CREATE TABLE memberWithClub(
+	id int not null auto_increment,
+	clubId int not null,
+	memberId int not null,
+	constraint FK_g foreign key(clubId) references club(id),
+	constraint FK_h foreign key(memberId) references user(id),
+	primary key(id)
+);
+
+//社团和活动映射
+CREATE TABLE activity(
+	id int not null auto_increment,
+	clubId int not null,
+	content text,
+	constraint FK_i foreign key(clubId) references club(id),
+	primary key(id)
+);
+
+//消息
+CREATE TABLE message(
+	id int not null auto_increment,
+	content text,
+	sender varchar(16) not null,
+	receiver varchar(16) not null,
+	primary key(id)
+);
+
+
+
+
+
