@@ -13,6 +13,8 @@
 9. 使用图表技术：ECharts
 10. 使用调度技术：Quartz
 11. 使用第三方接入：钉钉SDK
+12. 使用数据源：Hikari
+13. 使用模板引擎：Freemarker
 
 ## MMP
 1. fuck:tomcat7.0.78 not supports shiro 1.3.5
