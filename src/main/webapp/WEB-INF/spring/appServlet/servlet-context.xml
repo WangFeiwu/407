@@ -15,11 +15,11 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven>
 		<message-converters>
-			<!-- <beans:bean
-				class="org.springframework.http.converter.ResourceHttpMessageConverter" /> -->
-			<!-- <beans:bean
-				class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" /> -->
-			<beans:bean
+			 <beans:bean
+				class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+			 <beans:bean
+				class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
+			 <beans:bean
 				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 		</message-converters>
 	</annotation-driven>
