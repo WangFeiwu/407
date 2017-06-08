@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 配置自定义Realm -->
-    <bean id="myRealm" class="cn.flydou.rubbish407.CRealm.RealmTest"/>
+    <bean id="myRealm" class="cn.flydou.rubbish407.CRealm.myRealm"/>
     <!-- 安全管理器 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>

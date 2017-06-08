@@ -18,8 +18,10 @@ import java.util.Set;
 
 
 public class myRealm extends AuthorizingRealm {
+
     @Autowired
     private UserService userService;
+
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         String account = principalCollection.getPrimaryPrincipal().toString();
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -28,8 +30,11 @@ public class myRealm extends AuthorizingRealm {
     }
 
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        String account = authenticationToken.getPrincipal().toString();
-        User user = userService.getUserByAccount(account);
+//        String account = authenticationToken.getPrincipal().toString();
+//        User user = userService.getUserByAccount(account);
+        User user = new User();
+        user.setAccount("eraser@qq.com");
+        user.setPassword("123");
         if (user != null) {
             AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getAccount(), user.getPassword(), "e");
             return authenticationInfo;

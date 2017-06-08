@@ -5,26 +5,27 @@
 		<id column="id" jdbcType="INTEGER" property="id" />
 		<result column="account" jdbcType="VARCHAR" property="account" />
 		<result column="password" jdbcType="VARCHAR" property="password" />
-		<result column="usertype" jdbcType="VARCHAR" property="usertype" />
+		<result column="usertypeid" jdbcType="INTEGER" property="usertypeid" />
 	</resultMap>
 	<sql id="User_Column_List">
-		id, account, password, usertype
+		id, account, password, usertypeid
 	</sql>
 	<select id="getUserByAccount" parameterType="String" resultMap="List">
 		Select
 		<include refid="User_Column_List"/>
-		from user where account=#{account}
+		from user where account = #{account}
 	</select>
 	<select id="queryPasswordByAccount" parameterType="String" resultType="String">
-		select password from user where account=#{account}
+		select password from user where account = #{account}
 	</select>
 	<insert id="insertUser" parameterType="cn.flydou.rubbish407.entity.User" useGeneratedKeys="true" keyProperty="id" >
-		insert into user values(#{id},#{account},#{password},#{username},#{userphoto},#{contact})
+		insert into user values( #{id} , #{account}, #{password}, #{username}, #{userphoto}, #{contact})
 	</insert>
 	<select id="countUser" resultType="Integer">
 	 	select count(id) from user
 	</select>
-		<select id="queryIdByAccount" parameterType="String" resultType="Integer">
+
+	<select id="queryIdByAccount" parameterType="String" resultType="Integer">
 		select id from user where account=#{account}
 	</select>
 

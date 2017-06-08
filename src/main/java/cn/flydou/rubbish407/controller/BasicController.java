@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BasicController {
 
     private static Logger logger =LoggerFactory.getLogger(BasicController.class);
-
+    @Autowired
+    UserMapper userMapper;
     @RequestMapping("/")
     public String index() {
 

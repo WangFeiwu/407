@@ -17,5 +17,5 @@
 13. 使用模板引擎：Freemarker
 
 ## MMP
-1. fuck:tomcat7.0.78 not supports shiro 1.3.5
-2. fuck: 低于 tomcat 7.0.78 不支持mybatis 3.4.0 艹，搞半天
+1. md:tomcat7.0.78 not supports shiro 1.3.5
+2. md: 低于 tomcat 7.0.78 不支持mybatis 3.4.0
