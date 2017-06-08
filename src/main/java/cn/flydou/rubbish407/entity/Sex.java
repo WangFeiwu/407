@@ -7,11 +7,6 @@ public class Sex {
     private int id;
     private String sex;
 
-    public Sex(int id, String sex) {
-        this.id = id;
-        this.sex = sex;
-    }
-
     public int getId() {
         return id;
     }

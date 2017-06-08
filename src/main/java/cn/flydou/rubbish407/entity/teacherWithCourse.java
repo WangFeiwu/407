@@ -8,12 +8,6 @@ public class teacherWithCourse {
     private int teacherId;
     private int courseId;
 
-    public teacherWithCourse(int id, int teacherId, int courseId) {
-        this.id = id;
-        this.teacherId = teacherId;
-        this.courseId = courseId;
-    }
-
     public int getId() {
         return id;
     }

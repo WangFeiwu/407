@@ -17,23 +17,6 @@ public class Receipt {
     private int receipteNum;
     private String receipteType;
 
-    public Receipt(int id, int receipterId,
-                   String receipterName, String content,
-                   String receiptType, String receiptfor,
-                   Integer isProcess, Timestamp processedTime,
-                   int receipteNum, String receipteType) {
-        this.id = id;
-        this.receipterId = receipterId;
-        this.receipterName = receipterName;
-        this.content = content;
-        this.receiptType = receiptType;
-        this.receiptfor = receiptfor;
-        this.isProcess = isProcess;
-        this.processedTime = processedTime;
-        this.receipteNum = receipteNum;
-        this.receipteType = receipteType;
-    }
-
     public int getId() {
         return id;
     }

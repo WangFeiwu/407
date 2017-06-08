@@ -13,17 +13,6 @@ public class Attendance {
     private Timestamp afternoonStart;
     private Timestamp afternoonEnd;
 
-    public Attendance(int id, String attenderName,
-                      Timestamp morningStart, Timestamp morningEnd,
-                      Timestamp afternoonStart, Timestamp afternoonEnd) {
-        this.id = id;
-        this.attenderName = attenderName;
-        this.morningStart = morningStart;
-        this.morningEnd = morningEnd;
-        this.afternoonStart = afternoonStart;
-        this.afternoonEnd = afternoonEnd;
-    }
-
     public int getId() {
         return id;
     }

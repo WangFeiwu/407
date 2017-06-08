@@ -7,11 +7,6 @@ public class Activity {
     private int id;
     private int clubId;
     private String content;
-    public Activity(int id, int clubid, String content) {
-        this.id = id;
-        this.clubId = clubId;
-        this.content = content;
-    }
 
     public int getId() {
         return id;

@@ -1,20 +1,13 @@
 package cn.flydou.rubbish407.entity;
 
 /**
- * Created by Cheng on 2017/6/8.
+ * Created by Eraser on 2017/6/6.
  */
 public class User {
     private int id;
     private String account;
     private String password;
     private String usertype;
-
-    public User(int id, String account, String password, String usertype) {
-        this.id = id;
-        this.account = account;
-        this.password = password;
-        this.usertype = usertype;
-    }
 
     public int getId() {
         return id;

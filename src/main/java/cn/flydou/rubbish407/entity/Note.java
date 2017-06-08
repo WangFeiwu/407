@@ -13,16 +13,6 @@ public class Note {
     private Timestamp endTime;
     private Integer result;
 
-    public Note(int id, String sender, Integer isProcess,
-                Timestamp startTime, Timestamp endTime, Integer result) {
-        this.id = id;
-        this.sender = sender;
-        this.isProcess = isProcess;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.result = result;
-    }
-
     public int getId() {
         return id;
     }

@@ -12,15 +12,6 @@ public class Course {
     private Timestamp courseTime;
     private String courseType;
 
-    public Course(int id, String courseName,
-                  String courseRoom, Timestamp courseTime,
-                  String courseType) {
-        this.id = id;
-        this.courseName = courseName;
-        this.courseRoom = courseRoom;
-        this.courseTime = courseTime;
-        this.courseType = courseType;
-    }
 
     public int getId() {
         return id;

@@ -7,11 +7,6 @@ public class Role {
     private int id;
     private String usertype;
 
-    public Role(int id, String usertype) {
-        this.id = id;
-        this.usertype = usertype;
-    }
-
     public int getId() {
         return id;
     }

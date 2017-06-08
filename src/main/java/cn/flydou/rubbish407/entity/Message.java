@@ -9,12 +9,6 @@ public class Message {
     private String sender;
     private String receiver;
 
-    public Message(int id, String content, String sender, String receiver) {
-        this.id = id;
-        this.content = content;
-        this.sender = sender;
-        this.receiver = receiver;
-    }
 
     public int getId() {
         return id;

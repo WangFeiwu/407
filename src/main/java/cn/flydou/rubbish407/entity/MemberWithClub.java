@@ -8,12 +8,6 @@ public class MemberWithClub {
     private int clubId;
     private int memberId;
 
-    public MemberWithClub(int id, int clubId, int memberId) {
-        this.id = id;
-        this.clubId = clubId;
-        this.memberId = memberId;
-    }
-
     public int getId() {
         return id;
     }
