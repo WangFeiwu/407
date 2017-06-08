@@ -14,7 +14,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 //import javax.annotation.Resource;
 //import java.util.Set;
 ///**
-// * Created with IDEA
+// * Created wi th IDEA
 // * Created by ${jie.chen} on 2016/7/14.
 // * Shiro自定义域
 // */
