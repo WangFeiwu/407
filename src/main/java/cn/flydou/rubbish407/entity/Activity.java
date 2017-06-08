@@ -5,11 +5,11 @@ package cn.flydou.rubbish407.entity;
  */
 public class Activity {
     private int id;
-    private int clubid;
+    private int clubId;
     private String content;
     public Activity(int id, int clubid, String content) {
         this.id = id;
-        this.clubid = clubid;
+        this.clubId = clubId;
         this.content = content;
     }
 
@@ -22,11 +22,11 @@ public class Activity {
     }
 
     public int getClubid() {
-        return clubid;
+        return clubId;
     }
 
     public void setClubid(int clubid) {
-        this.clubid = clubid;
+        this.clubId = clubid;
     }
 
     public String getContent() {
