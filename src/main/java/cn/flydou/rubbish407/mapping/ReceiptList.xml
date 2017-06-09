@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.flydou.rubbish407.dao.ReceiptList">
+	<resultMap type="cn.flydou.rubbish407.entity.Receipt" id="List_receipt">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<id column="receipterId" jdbcType="INTEGER" property="receipterId" />
+		<result column="receipterName" jdbcType="VARCHAR" property="receipterName" />
+		<result column="content" jdbcType="VARCHAR" property="content" />
+		<result column="receiptType" jdbcType="VARCHAR" property="receiptType" />
+		<result column="receiptfor" jdbcType="INTEGER" property="receiptfor" />
+		<result column="isProcessed" jdbcType="BOOLEAN" property="isProcessed" />
+		<result column="processedTime" jdbcType="VARCHAR" property="processedTime" />
+		<result column="receipteNum" jdbcType="INTEGER" property="receipteNum" />
+		<result column="receipteType" jdbcType="VARCHAR" property="receipteType" />
+	</resultMap>
+
+	<select id="showReceiptById" parameterType="INTEGER" resultMap="List_receipt">
+		select * from receipt where id = #{id}
+	</select>
+
+	<select id="showReceiptByReceiptId" parameterType="INTEGER" resultMap="List_receipt">
+		select * from receipt where receipterId = #{receipterId}
+	</select>
+
+	<insert id="insertNewReceipt" parameterType="cn.flydou.rubbish407.entity.Receipt" useGeneratedKeys="true" keyProperty="id" >
+		insert into receipt values
+(#{id},#{receipterId},#{receipterName},#{content},#{receiptType},#{receiptfor},#{isProcessed},#{processedTime},#{receipteNum},#{receipteType})
+	</insert>
+
+	<delete id="deleteReceiptById" parameterType="cn.flydou.rubbish407.entity.Receipt" flushCache="true">
+		delete from receipt where id = #{id}
+	</delete>
+
+	<delete id="deleteReceiptByReceiptId" parameterType="cn.flydou.rubbish407.entity.Receipt" flushCache="true">
+		delete from receipt where receipterId = #{receipterId}
+	</delete>
+
+	<update id="updateReceiptList" parameterType="cn.flydou.rubbish407.entity.Receipt" resultMap="List">
+		update receipt set receipterName =#{new_receipterName},content =#{new_content},receiptType =#{new_receiptType} ,receiptfor =#{new_receiptfor},isProcessed =#{new_isProcessed},processedTime =#{new_processedTime},receipteNum =#{new_receipteNum},receipteType =#{new_receipteType} where id = #{id}
+	</update>
+
+</mapper>

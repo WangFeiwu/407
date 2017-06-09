@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.flydou.rubbish407.dao.UserAttendance">
+	<resultMap type="cn.flydou.rubbish407.entity.Attendance" id="List_attendance">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="attenderName" jdbcType="VARCHAR" property="attenderName" />
+		<result column="morningStart" jdbcType="BOOLEAN" property="morningStart" />
+		<result column="morningEnd" jdbcType="VARCHAR" property="morningEnd" />
+		<result column="afternoonStart" jdbcType="VARCHAR" property="afternoonStart" />
+		<result column="afternoonEnd" jdbcType="VARCHAR" property="afternoonEnd" />
+	</resultMap>
+
+	<select id="queryAttender" parameterType="INTEGER" resultMap="List_attendance">
+		select * from attendance where id = #{id}
+	</select>
+
+	<insert id="addNewAttendance" parameterType="cn.flydou.rubbish407.entity.Attendance" useGeneratedKeys="true" keyProperty="id" >
+		insert into attendance values
+(#{id},#{attenderName},#{morningStart},#{morningEnd},#{afternoonStart},#{afternoonEnd})
+	</insert>
+
+	<delete id="deleteAttendanceById" parameterType="cn.flydou.rubbish407.entity.Attendance" flushCache="true">
+		delete from attendance where id = #{id}
+	</delete>
+
+	<update id="updateAttendance" parameterType="cn.flydou.rubbish407.entity.Attendance" resultMap="List_attendance">
+		update note set id = #{new_id},attenderName = #{new_attenderName},morningStart =#{new_morningStart},morningEnd =#{new_morningEnd},afternoonStart =#{new_afternoonStart},afternoonEnd =#{new_afternoonEnd} where id = #{id}
+	</update>
+</mapper>

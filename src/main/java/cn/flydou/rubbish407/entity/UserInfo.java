@@ -5,7 +5,24 @@ package cn.flydou.rubbish407.entity;
  */
 public class UserInfo {
     private int id;
+    private int userId;
+    private String name;
+    private String idcardNum;
+    private String sex;
+    private int num;
+    private int age;
+    private String apartment;
+    private String nativePlace;
+    private String registerBatch;
+    private String date;
+    private String jobState;
+    private String telNum1;
+    private String telNum2;
+    private String qq;
+    private String email;
+    private String address;
 
+    private String job;
     public void setId(int id) {
         this.id = id;
     }
@@ -78,23 +95,7 @@ public class UserInfo {
         this.job = job;
     }
 
-    private int userId;
-    private String name;
-    private String idcardNum;
-    private String sex;
-    private int num;
-    private int age;
-    private String apartment;
-    private String nativePlace;
-    private String registerBatch;
-    private String date;
-    private String jobState;
-    private String telNum1;
-    private String telNum2;
-    private String qq;
-    private String email;
-    private String address;
-    private String job;
+
 
     public int getId() {
         return id;
@@ -124,9 +125,7 @@ public class UserInfo {
         return age;
     }
 
-    public String getApartment() {
-        return apartment;
-    }
+    public String getApartment() { return apartment;}
 
     public String getNativePlace() {
         return nativePlace;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.intelligentler.shuitu.dao.TXLUserMapperInfo">
-	<resultMap type="com.intelligentler.shuitu.entity.User" id="List">
+<mapper namespace="cn.flydou.rubbish407.dao.UserMapperInfo">
+	<resultMap type="cn.flydou.rubbish407.entity.UserInfo" id="List_info">
 		<id column="id" jdbcType="INTEGER" property="id" />
 		<id column="userId" jdbcType="INTEGER" property="userId" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
@@ -22,25 +22,25 @@
 		<result column="job" jdbcType="VARCHAR" property="job" />
 	</resultMap>
 
-	<select id="showUserInfoById" parameterType="INTEGER" resultMap="List">
+	<select id="showUserInfoById" parameterType="INTEGER" resultMap="List_info">
 		select * from userInfo where id = #{id}
 	</select>
 
-	<select id="showUserInfoByUserId" parameterType="INTEGER" resultMap="List">
+	<select id="showUserInfoByUserId" parameterType="INTEGER" resultMap="List_info">
 		select * from userInfo where userId = #{userId}
 	</select>
 
-	<insert id="insertUserInfo" parameterType="com.intelligentler.shuitu.entity.UserInfo" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="insertUserInfo" parameterType="cn.flydou.rubbish407.entity.UserInfo" useGeneratedKeys="true" keyProperty="id" >
 		insert into userInfo values
 (#{id},#{userId},#{name},#{idcardNum},#{sex},#{num},#{age},#{apartment},#{nativePlace},#{registerBatch},#{start_time},#{jobState},#{telNum1},#{telNum2},#{qq},#{email},#{address},#{job})
 	</insert>
 
-	<delete id="deleteUserInfo" parameterType="com.intelligentler.shuitu.entity.UserInfo" flushCache="true">
+	<delete id="deleteUserInfo" parameterType="cn.flydou.rubbish407.entity.UserInfo" flushCache="true">
 	 	delete from userInfo where id = #{id}
 	</delete>
 
-		<update id="updateUserInfo" parameterType="com.intelligentler.shuitu.entity.UserInfo" resultMap="List">
-		update userInfo set name =#{new_name},sex =#{new_sex},num =#{new_num},age =#{new_age},apartment =#{new_apartment},nativePlace =#{new_nativePlace},registerBatch =#{new_registerBatch},start_time =#{new_start_time},jobState =#{new_jobState},telNum1 =#{new_telNum1},telNum2 =#{new_telNum2},qq =#{new_qq},email =#{new_email},address =#{new_address},job =#{new_job} where id = #{id}
+		<update id="updateUserInfo" parameterType="cn.flydou.rubbish407.entity.UserInfo" resultMap="List_info">
+		update userInfo set name=#{new_name},sex =#{new_sex},num =#{new_num},age =#{new_age},apartment =#{new_apartment},nativePlace =#{new_nativePlace},registerBatch =#{new_registerBatch},start_time =#{new_start_time},jobState =#{new_jobState},telNum1 =#{new_telNum1},telNum2 =#{new_telNum2},qq =#{new_qq},email =#{new_email},address =#{new_address},job =#{new_job} where id = #{id}
 	</update>
 
 </mapper>
