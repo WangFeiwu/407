@@ -32,11 +32,16 @@
 		<property name="useGeneratedKeys" value="true"/>
 		<property name="useColumnLabel" value="true"/>
 		<property name="mapUnderscoreToCamelCase" value="true"/>
+		<!--使用stdout作为logging，mybatis日志系统选择顺序为slf4j,common log(容器自带),log4j-->
+		<!--<property name="logImpl" value="org.apache.ibatis.logging.stdout.StdOutImpl"/>-->
+		<!--如果要使用log4j输出，但是被容器自带的日志系统优先接管了，那么可以用以下参数-->
+		<!--<property name="logImpl" value="org.apache.ibatis.logging.log4j.Log4jImpl"/>-->
 	</bean>
 	
 	<!-- sessionFactory 将spring和mybatis整合 --> 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">  
-        <property name="dataSource" ref="dataSource" />  
+        <property name="dataSource" ref="dataSource" />
+
         <!-- config location of mapping.xml -->  
         <property name="mapperLocations">
         		<list>
@@ -66,7 +71,7 @@
 			<ref bean="dataSource"/>
 		</property>
 	</bean>
-	
+
 	<!-- Enable spring tx annotation config 事务管理 -->	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	<!-- Tx Config -->
